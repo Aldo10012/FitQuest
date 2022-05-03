@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    private var healthService = HealthKitService()
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
+            .onAppear {
+                healthService.requestAuthorization { didPass in
+                    if didPass {
+                        print("auth passed")
+                        
+                        // testing to see if requestHealthStat() works
+                        healthService.requestHealthStat(for: .stepCount) { stepCountStats in
+                            print("Your step count", stepCountStats)
+                        }
+                    } else {
+                        print("auth failed")
+                    }
+                }
+            }
     }
 }
 

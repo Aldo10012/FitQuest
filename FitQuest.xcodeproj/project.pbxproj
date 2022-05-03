@@ -17,6 +17,10 @@
 		63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCA2820CBB5003EB40D /* HealthKitService.swift */; };
 		63075BCD2820CBE0003EB40D /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCC2820CBE0003EB40D /* model.swift */; };
 		63075BCF2820CBF6003EB40D /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCE2820CBF6003EB40D /* viewModel.swift */; };
+		63075BD12820D6A3003EB40D /* HealthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD02820D6A3003EB40D /* HealthType.swift */; };
+		63075BD42820D95E003EB40D /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD32820D95E003EB40D /* Date-ext.swift */; };
+		63075BD62820E522003EB40D /* HealthStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD52820E522003EB40D /* HealthStat.swift */; };
+		63075BDA2820E803003EB40D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63075BD92820E803003EB40D /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,11 @@
 		63075BCA2820CBB5003EB40D /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		63075BCC2820CBE0003EB40D /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		63075BCE2820CBF6003EB40D /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
+		63075BD02820D6A3003EB40D /* HealthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthType.swift; sourceTree = "<group>"; };
+		63075BD32820D95E003EB40D /* Date-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-ext.swift"; sourceTree = "<group>"; };
+		63075BD52820E522003EB40D /* HealthStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStat.swift; sourceTree = "<group>"; };
+		63075BD72820E803003EB40D /* FitQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitQuest.entitlements; sourceTree = "<group>"; };
+		63075BD92820E803003EB40D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63075BDA2820E803003EB40D /* HealthKit.framework in Frameworks */,
 				63075BC22820C8B3003EB40D /* RealmSwift in Frameworks */,
 				63075BC02820C8B3003EB40D /* Realm in Frameworks */,
 			);
@@ -49,6 +59,7 @@
 			children = (
 				63075BAF2820C782003EB40D /* FitQuest */,
 				63075BAE2820C782003EB40D /* Products */,
+				63075BD82820E803003EB40D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,12 +74,14 @@
 		63075BAF2820C782003EB40D /* FitQuest */ = {
 			isa = PBXGroup;
 			children = (
+				63075BD72820E803003EB40D /* FitQuest.entitlements */,
 				63075BB02820C782003EB40D /* FitQuestApp.swift */,
 				63075BC42820C9C8003EB40D /* Realm */,
 				63075BC32820C9B9003EB40D /* HealthKit */,
 				63075BC52820C9D1003EB40D /* Model */,
 				63075BC62820C9D8003EB40D /* View */,
 				63075BC72820C9DC003EB40D /* ViewModel */,
+				63075BD22820D925003EB40D /* Extensions */,
 				63075BB42820C786003EB40D /* Assets.xcassets */,
 				63075BB62820C786003EB40D /* Preview Content */,
 			);
@@ -87,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				63075BCA2820CBB5003EB40D /* HealthKitService.swift */,
+				63075BD02820D6A3003EB40D /* HealthType.swift */,
+				63075BD52820E522003EB40D /* HealthStat.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
@@ -121,6 +136,22 @@
 				63075BCE2820CBF6003EB40D /* viewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63075BD22820D925003EB40D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63075BD32820D95E003EB40D /* Date-ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		63075BD82820E803003EB40D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63075BD92820E803003EB40D /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +235,11 @@
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,
 				63075BB32820C782003EB40D /* ContentView.swift in Sources */,
 				63075BC92820CAAC003EB40D /* RealmService.swift in Sources */,
+				63075BD12820D6A3003EB40D /* HealthType.swift in Sources */,
+				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,
 				63075BCF2820CBF6003EB40D /* viewModel.swift in Sources */,
 				63075BB12820C782003EB40D /* FitQuestApp.swift in Sources */,
+				63075BD62820E522003EB40D /* HealthStat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitQuest/FitQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitQuest/Preview Content\"";
@@ -362,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitQuest/FitQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FitQuest/Preview Content\"";
