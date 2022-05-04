@@ -102,6 +102,7 @@
 				63075BC62820C9D8003EB40D /* View */,
 				63075BC72820C9DC003EB40D /* ViewModel */,
 				63075BD22820D925003EB40D /* Extensions */,
+				6387EB1F2822FAF50032484E /* Helpers */,
 				63075BB42820C786003EB40D /* Assets.xcassets */,
 				63075BB62820C786003EB40D /* Preview Content */,
 			);
@@ -162,7 +163,6 @@
 			children = (
 				63075BCE2820CBF6003EB40D /* HomeViewModel.swift */,
 				6387EB192822DBCE0032484E /* NewGoalViewModel.swift */,
-				6387EB1B2822EAA40032484E /* GoalCreater.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +190,14 @@
 				636B745D2822574300CFBA9A /* UserStatsBarView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		6387EB1F2822FAF50032484E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6387EB1B2822EAA40032484E /* GoalCreater.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

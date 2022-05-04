@@ -58,5 +58,25 @@ class RealmService {
         
         return currentUser
     }
+    
+    /// add new goal
+    func createNewGoal(type: String, difficulty: String) {
+        // create new goal
+        var newGoal = Goal()
+        newGoal.type = type
+        newGoal.difficulty = difficulty
+        
+        // get current user
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        
+        // add new goal to user.goals
+        try! realm?.write {
+            currentUser.goals.append(newGoal)
+        }
+        
+    }
 
 }

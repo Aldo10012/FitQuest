@@ -44,4 +44,9 @@ class NewGoalViewModel: ObservableObject {
     func setupGoalLabel() {
         yourGoal = GoalCreater().createGoalLabel(type: selectedType, difficulty: selectedDifficulty)
     }
+    
+    func addNewGoal() {
+        let realmService = RealmService.shared
+        realmService.createNewGoal(type: selectedType, difficulty: selectedDifficulty)
+    }
 }

@@ -85,7 +85,7 @@ struct NewGoalView: View {
     }
     
     func didTapCreate() {
-        // add goal to database
+        viewModel.addNewGoal()
         showSheetView = false
     }
 }
