@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct TypeListItem: Hashable {
+    let displayName: String
+    let typeName: String
+}
+
 class NewGoalViewModel: ObservableObject {
     @Published var selectedType: String = "" {
         didSet {
@@ -21,12 +26,12 @@ class NewGoalViewModel: ObservableObject {
     
     @Published var yourGoal: String = "Your Goal: N/A"
     
-    let typeList: [String] = [
-        "Exercise Time",  // "appleExerciseTime"
-        "Step Count",     // "stepCount"
-        "Distance",       // "distanceWalkingRunning"
-        "Cycling",        // "distanceCycling"
-        "Flights Climbed" // "flightsClimbed"
+    let typeList: [TypeListItem] = [        
+        TypeListItem(displayName: "Exercise Time",   typeName: "appleExerciseTime"),
+        TypeListItem(displayName: "Step Count",      typeName: "stepCount"),
+        TypeListItem(displayName: "Distance",        typeName: "distanceWalkingRunning"),
+        TypeListItem(displayName: "Cycling",         typeName: "distanceCycling"),
+        TypeListItem(displayName: "Flights Climbed", typeName: "flightsClimbed")
     ]
     
     let difficultyList: [String] = [

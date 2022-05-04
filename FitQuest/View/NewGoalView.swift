@@ -20,11 +20,11 @@ struct NewGoalView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(viewModel.typeList, id: \.self) { type in
-                            Text(type)
+                            Text(type.displayName)
                                 .padding()
                                 .background(Color.white)
                                 .onTapGesture {
-                                    viewModel.selectedType = type
+                                    viewModel.selectedType = type.typeName
                                 }
                         }
                     }

@@ -10,7 +10,7 @@ import Foundation
 class GoalCreater {
     func createGoalLabel(type: String, difficulty: String) -> String {
         switch type {
-        case "Exercise Time": // appleExerciseTime
+        case "appleExerciseTime":
             switch difficulty {
             case "Trivial": return "Exercise for 15 min"
             case "Easy":    return "Exercise for 30 min"
@@ -18,15 +18,15 @@ class GoalCreater {
             case "Hard":    return "Exercise for 60 min"
             default: break
             }
-        case "Step Count": // stepCount
+        case "stepCount":
             switch difficulty {
             case "Trivial": return "Walk 2.5k steps"
             case "Easy":    return "Walk 5k steps"
-            case "Normal":  return "Walk 5.5k steps"
+            case "Normal":  return "Walk 7.5k steps"
             case "Hard":    return "Walk 10k steps"
             default: break
             }
-        case "Distance": // distanceWalkingRunning
+        case "distanceWalkingRunning":
             switch difficulty {
             case "Trivial": return "Walk/run 1.25 miles"
             case "Easy":    return "Walk/run 2.5 miles"
@@ -34,7 +34,7 @@ class GoalCreater {
             case "Hard":    return "Walk/run 5 miles"
             default: break
             }
-        case "Cycling": // distanceCycling
+        case "distanceCycling":
             switch difficulty {
             case "Trivial": return "Cycle 2.5 miles"
             case "Easy":    return "Cycle 5 miles"
@@ -42,7 +42,7 @@ class GoalCreater {
             case "Hard":    return "Cycle 10 miles"
             default: break
             }
-        case "Flights Climbed": // flightsClimbed
+        case "flightsClimbed": 
             switch difficulty {
             case "Trivial": return "Climb 5 floors"
             case "Easy":    return "Climb 10 floors"
