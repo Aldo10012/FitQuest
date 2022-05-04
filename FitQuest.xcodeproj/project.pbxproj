@@ -8,36 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		63075BB12820C782003EB40D /* FitQuestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BB02820C782003EB40D /* FitQuestApp.swift */; };
-		63075BB32820C782003EB40D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BB22820C782003EB40D /* ContentView.swift */; };
+		63075BB32820C782003EB40D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BB22820C782003EB40D /* HomeView.swift */; };
 		63075BB52820C786003EB40D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63075BB42820C786003EB40D /* Assets.xcassets */; };
 		63075BB82820C786003EB40D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63075BB72820C786003EB40D /* Preview Assets.xcassets */; };
 		63075BC02820C8B3003EB40D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 63075BBF2820C8B3003EB40D /* Realm */; };
 		63075BC22820C8B3003EB40D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 63075BC12820C8B3003EB40D /* RealmSwift */; };
 		63075BC92820CAAC003EB40D /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BC82820CAAC003EB40D /* RealmService.swift */; };
 		63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCA2820CBB5003EB40D /* HealthKitService.swift */; };
-		63075BCD2820CBE0003EB40D /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCC2820CBE0003EB40D /* model.swift */; };
-		63075BCF2820CBF6003EB40D /* viewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCE2820CBF6003EB40D /* viewModel.swift */; };
+		63075BCD2820CBE0003EB40D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCC2820CBE0003EB40D /* User.swift */; };
+		63075BCF2820CBF6003EB40D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BCE2820CBF6003EB40D /* HomeViewModel.swift */; };
 		63075BD12820D6A3003EB40D /* HealthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD02820D6A3003EB40D /* HealthType.swift */; };
 		63075BD42820D95E003EB40D /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD32820D95E003EB40D /* Date-ext.swift */; };
 		63075BD62820E522003EB40D /* HealthStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD52820E522003EB40D /* HealthStat.swift */; };
 		63075BDA2820E803003EB40D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63075BD92820E803003EB40D /* HealthKit.framework */; };
+		636B7455282202A800CFBA9A /* HealthKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B7454282202A800CFBA9A /* HealthKitError.swift */; };
+		636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B74562822443600CFBA9A /* HealthTypeAdapter.swift */; };
+		636B74592822476000CFBA9A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B74582822476000CFBA9A /* Goal.swift */; };
+		636B745B2822478000CFBA9A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B745A2822478000CFBA9A /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63075BAD2820C782003EB40D /* FitQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63075BB02820C782003EB40D /* FitQuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitQuestApp.swift; sourceTree = "<group>"; };
-		63075BB22820C782003EB40D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63075BB22820C782003EB40D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		63075BB42820C786003EB40D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63075BB72820C786003EB40D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63075BC82820CAAC003EB40D /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		63075BCA2820CBB5003EB40D /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
-		63075BCC2820CBE0003EB40D /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		63075BCE2820CBF6003EB40D /* viewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewModel.swift; sourceTree = "<group>"; };
+		63075BCC2820CBE0003EB40D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		63075BCE2820CBF6003EB40D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		63075BD02820D6A3003EB40D /* HealthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthType.swift; sourceTree = "<group>"; };
 		63075BD32820D95E003EB40D /* Date-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-ext.swift"; sourceTree = "<group>"; };
 		63075BD52820E522003EB40D /* HealthStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStat.swift; sourceTree = "<group>"; };
 		63075BD72820E803003EB40D /* FitQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitQuest.entitlements; sourceTree = "<group>"; };
 		63075BD92820E803003EB40D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		636B7454282202A800CFBA9A /* HealthKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitError.swift; sourceTree = "<group>"; };
+		636B74562822443600CFBA9A /* HealthTypeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTypeAdapter.swift; sourceTree = "<group>"; };
+		636B74582822476000CFBA9A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		636B745A2822478000CFBA9A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,9 @@
 			children = (
 				63075BCA2820CBB5003EB40D /* HealthKitService.swift */,
 				63075BD02820D6A3003EB40D /* HealthType.swift */,
+				636B74562822443600CFBA9A /* HealthTypeAdapter.swift */,
 				63075BD52820E522003EB40D /* HealthStat.swift */,
+				636B7454282202A800CFBA9A /* HealthKitError.swift */,
 			);
 			path = HealthKit;
 			sourceTree = "<group>";
@@ -117,7 +127,9 @@
 		63075BC52820C9D1003EB40D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63075BCC2820CBE0003EB40D /* model.swift */,
+				63075BCC2820CBE0003EB40D /* User.swift */,
+				636B74582822476000CFBA9A /* Goal.swift */,
+				636B745A2822478000CFBA9A /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,7 +137,7 @@
 		63075BC62820C9D8003EB40D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				63075BB22820C782003EB40D /* ContentView.swift */,
+				63075BB22820C782003EB40D /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,7 +145,7 @@
 		63075BC72820C9DC003EB40D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				63075BCE2820CBF6003EB40D /* viewModel.swift */,
+				63075BCE2820CBF6003EB40D /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -231,15 +243,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63075BCD2820CBE0003EB40D /* model.swift in Sources */,
+				636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */,
+				63075BCD2820CBE0003EB40D /* User.swift in Sources */,
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,
-				63075BB32820C782003EB40D /* ContentView.swift in Sources */,
+				63075BB32820C782003EB40D /* HomeView.swift in Sources */,
+				636B74592822476000CFBA9A /* Goal.swift in Sources */,
 				63075BC92820CAAC003EB40D /* RealmService.swift in Sources */,
 				63075BD12820D6A3003EB40D /* HealthType.swift in Sources */,
+				636B745B2822478000CFBA9A /* Item.swift in Sources */,
 				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,
-				63075BCF2820CBF6003EB40D /* viewModel.swift in Sources */,
+				63075BCF2820CBF6003EB40D /* HomeViewModel.swift in Sources */,
 				63075BB12820C782003EB40D /* FitQuestApp.swift in Sources */,
 				63075BD62820E522003EB40D /* HealthStat.swift in Sources */,
+				636B7455282202A800CFBA9A /* HealthKitError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

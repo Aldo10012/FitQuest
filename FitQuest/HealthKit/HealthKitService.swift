@@ -28,41 +28,52 @@ class HealthKitService {
     // MARK: - Request Authorization
     
     /// requests permission from user to access HealthKit data
-    func requestAuthorization(_ completion: @escaping (Bool) -> ()) {
+    func requestAuthorization(_ completion: @escaping (Result<Bool, HealthKitError>) -> ()) {
         guard let store = healthStore else {
             return
         }
         
         guard let healthStore = self.healthStore else {
-            return completion(false)
+            completion(Result.failure(.authorizaitonFailed))
+            return
         }
         
+        
         healthStore.requestAuthorization(toShare: [], read: HealthType.allTypes) { success, error in
-            completion(success)
+            switch success {
+            case true:
+                completion(Result.success(true))
+            case false:
+                completion(Result.failure(.authorizaitonFailed))
+            }
         }
     }
     
     // MARK: Request HK stats
     
     /// request the health stats of all categories we're keeping track of
-    func requestAllHealthStat() {
-        var healthStats: [HealthStat] = []
+    func requestAllHealthStat(_ completion: @escaping (Result<[HealthStat], HealthKitError>) -> ()) {
         
         for category in HealthType.allHKQuantityTypeIdentifiers {
-            requestHealthStat(for: category) { healthStetsResult in
-                healthStats += healthStetsResult
+            requestHealthStat(for: category) { result in
+                switch result {
+                case let .success(healthStatsResult):
+                    completion(Result.success(healthStatsResult))
+                case let .failure(error):
+                    print(error.rawValue)
+                    completion(Result.failure(error))
+                }
             }
         }
         
-        self.statsForToday = healthStats
     }
     
     /// requests the health stats of a given category
-    func requestHealthStat(for category: HKQuantityTypeIdentifier, completion: @escaping ([HealthStat]) -> ()) {
+    func requestHealthStat(for category: HKQuantityTypeIdentifier, completion: @escaping (Result<[HealthStat], HealthKitError>) -> ()) {
         guard let store = healthStore else { return }
         let type = HealthType.getType(of: category)
         
-        let startData = Date.yesturday
+        let startData = Date().midnight
         let endDate = Date.today
         let anchorDate = Date.mondayAt12AM()
         let daily = DateComponents(day: 1)
@@ -76,14 +87,16 @@ class HealthKitService {
         
         query?.initialResultsHandler = { query, statistics, error in
             statistics?.enumerateStatistics(from: startData, to: endDate, with: { stats, _ in
-                let stat = HealthStat(stat: stats.sumQuantity(), date: stats.startDate)
+                let type = HealthTypeAdapter.HKQuantityTypeIdentifierToString(category)
+                let stat = HealthStat(type: type, stat: stats.sumQuantity(), date: stats.startDate)
                 healthStats.append(stat)
             })
             
-            completion(healthStats)
+            completion(Result.success(healthStats))
         }
         
         guard let query = query else {
+            completion(Result.failure(HealthKitError.queryIsNil))
             return
         }
         

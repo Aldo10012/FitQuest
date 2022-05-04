@@ -10,6 +10,7 @@ import HealthKit
 
 struct HealthStat {
     let id = UUID()
+    let type: String
     let stat: HKQuantity?
     let date: Date
 }

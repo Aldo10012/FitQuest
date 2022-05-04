@@ -12,6 +12,11 @@ extension Date {
         return Date()
     }
     
+    var midnight: Date{
+        let cal = Calendar(identifier: .gregorian)
+        return cal.startOfDay(for: self)
+    }
+    
     static var yesturday: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
     }
