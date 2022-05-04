@@ -26,6 +26,8 @@
 		636B74592822476000CFBA9A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B74582822476000CFBA9A /* Goal.swift */; };
 		636B745B2822478000CFBA9A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B745A2822478000CFBA9A /* Item.swift */; };
 		636B745E2822574300CFBA9A /* UserStatsBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B745D2822574300CFBA9A /* UserStatsBarView.swift */; };
+		636B746028226D6500CFBA9A /* NewGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B745F28226D6500CFBA9A /* NewGoalView.swift */; };
+		636B746228226DA200CFBA9A /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B746128226DA200CFBA9A /* ItemStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		636B74582822476000CFBA9A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		636B745A2822478000CFBA9A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		636B745D2822574300CFBA9A /* UserStatsBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsBarView.swift; sourceTree = "<group>"; };
+		636B745F28226D6500CFBA9A /* NewGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalView.swift; sourceTree = "<group>"; };
+		636B746128226DA200CFBA9A /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				63075BCC2820CBE0003EB40D /* User.swift */,
 				636B74582822476000CFBA9A /* Goal.swift */,
 				636B745A2822478000CFBA9A /* Item.swift */,
+				636B746128226DA200CFBA9A /* ItemStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			children = (
 				636B745C2822572800CFBA9A /* Components */,
 				63075BB22820C782003EB40D /* HomeView.swift */,
+				636B745F28226D6500CFBA9A /* NewGoalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 				63075BB32820C782003EB40D /* HomeView.swift in Sources */,
 				636B74592822476000CFBA9A /* Goal.swift in Sources */,
 				63075BC92820CAAC003EB40D /* RealmService.swift in Sources */,
+				636B746228226DA200CFBA9A /* ItemStore.swift in Sources */,
 				63075BD12820D6A3003EB40D /* HealthType.swift in Sources */,
+				636B746028226D6500CFBA9A /* NewGoalView.swift in Sources */,
 				636B745B2822478000CFBA9A /* Item.swift in Sources */,
 				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,
 				63075BCF2820CBF6003EB40D /* HomeViewModel.swift in Sources */,

@@ -46,7 +46,7 @@ struct HomeView: View {
                         showModal.toggle()
                     }
                     .sheet(isPresented: $showModal) {
-                        Text("Add new Goal")
+                        NewGoalView(showSheetView: $showModal)
                     }
                 }
             }
