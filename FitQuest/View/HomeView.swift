@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject private var viewModel = HomeViewModel()
+    @State var showModal: Bool = false
     
     var body: some View {
         NavigationView {
@@ -39,12 +40,22 @@ struct HomeView: View {
             }
             .padding()
             .navigationBarTitle(Text("Title"), displayMode: .inline)
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Add") {
+                        showModal.toggle()
+                    }
+                    .sheet(isPresented: $showModal) {
+                        Text("Add new Goal")
+                    }
+                }
+            }
             
         }
-        .onAppear {
-            viewModel.requestAuthorization()
-    }
+        
+//        .onAppear {
+//            viewModel.requestAuthorization()
+//        }
     }
     
 }
