@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension Color {
+    
+    static func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat) -> Color {
+        return Color.init(red: red/255, green: green/255, blue: blue/255)
+    }
+    
+    public static var gray1: Color {
+        return Color.rgb(196, 196, 196)
+    }
+    
+    
+}

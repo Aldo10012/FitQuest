@@ -9,22 +9,73 @@ import SwiftUI
 
 struct NewGoalView: View {
     @Binding var showSheetView: Bool
+    @ObservedObject var viewModel = NewGoalViewModel()
     
     var body: some View {
         NavigationView {
-            Text("Hello, World!")
-                .navigationBarTitle(Text("New Goal"), displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel", action: didTapCancel)
-                        
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Select Goal Type")
+                    .font(.title3)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(viewModel.typeList, id: \.self) { type in
+                            Text(type)
+                                .padding()
+                                .background(Color.white)
+                                .onTapGesture {
+                                    viewModel.selectedType = type
+                                }
+                        }
                     }
+                }
+                .padding(.vertical, 20)
+                .background(Color.gray1)
+                .cornerRadius(15)
+                
+                Text("Select Difficulty")
+                    .font(.title3)
+                
+                HStack(alignment: .center, spacing: 20) {
+                    ForEach(viewModel.difficultyList, id: \.self) { difficulty in
+                        Text(difficulty)
+                            .padding()
+                            .background(Color.white)
+                            .onTapGesture {
+                                viewModel.selectedDifficulty = difficulty
+                            }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(Color.gray1)
+                .cornerRadius(15)
+                
+                Spacer()
+                
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text(viewModel.yourGoal)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                    Spacer()
+                }
                     
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Create", action: didTapCreate)
-                    }
+                
+                Spacer()
+            }
+            .padding()
+            .navigationBarTitle(Text("New Goal"), displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel", action: didTapCancel)
                     
                 }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Create", action: didTapCreate)
+                }
+                
+            }
             
         }
     }
