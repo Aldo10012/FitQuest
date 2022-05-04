@@ -56,4 +56,54 @@ class GoalCreater {
         
         return "Your Goal: N/A"
     }
+    
+    
+    func getGoalFor(type: String, difficulty: String) -> String {
+        switch type {
+        case "appleExerciseTime":
+            switch difficulty {
+            case "Trivial": return "15 min"
+            case "Easy":    return "30 min"
+            case "Normal":  return "45 min"
+            case "Hard":    return "60 min"
+            default: break
+            }
+        case "stepCount":
+            switch difficulty {
+            case "Trivial": return "2,500 steps"
+            case "Easy":    return "5,000 steps"
+            case "Normal":  return "7,500 steps"
+            case "Hard":    return "10,000 steps"
+            default: break
+            }
+        case "distanceWalkingRunning":
+            switch difficulty {
+            case "Trivial": return "1.25 miles"
+            case "Easy":    return "2.5 miles"
+            case "Normal":  return "3.75 miles"
+            case "Hard":    return "5 miles"
+            default: break
+            }
+        case "distanceCycling":
+            switch difficulty {
+            case "Trivial": return "2.5 miles"
+            case "Easy":    return "5 miles"
+            case "Normal":  return "7.5 miles"
+            case "Hard":    return "10 miles"
+            default: break
+            }
+        case "flightsClimbed":
+            switch difficulty {
+            case "Trivial": return "5 floors"
+            case "Easy":    return "10 floors"
+            case "Normal":  return "15 floors"
+            case "Hard":    return "20 floors"
+            default: break
+            }
+        default:
+            break
+        }
+        
+        return "-"
+    }
 }

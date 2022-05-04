@@ -29,7 +29,7 @@ class NewGoalViewModel: ObservableObject {
     let typeList: [TypeListItem] = [        
         TypeListItem(displayName: "Exercise Time",   typeName: "appleExerciseTime"),
         TypeListItem(displayName: "Step Count",      typeName: "stepCount"),
-        TypeListItem(displayName: "Distance",        typeName: "distanceWalkingRunning"),
+        TypeListItem(displayName: "Walking/Running", typeName: "distanceWalkingRunning"),
         TypeListItem(displayName: "Cycling",         typeName: "distanceCycling"),
         TypeListItem(displayName: "Flights Climbed", typeName: "flightsClimbed")
     ]

@@ -53,9 +53,9 @@ struct HomeView: View {
             
         }
         
-//        .onAppear {
-//            viewModel.requestAuthorization()
-//        }
+        .onAppear {
+            viewModel.requestAuthorization()
+        }
     }
     
 }
