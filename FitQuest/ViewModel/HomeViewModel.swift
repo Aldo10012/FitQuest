@@ -14,9 +14,10 @@ class HomeViewModel: ObservableObject {
     // MARK: Properties
     
     @Published var health: Int = 0
+    @Published var maxHealth: Int = 0
     @Published var exp: Int = 0
-    @Published var level: Int = 0
     @Published var expNeededToLevelUp: Int = 0
+    @Published var level: Int = 0
     
     var healthService = HealthKitService()
     
