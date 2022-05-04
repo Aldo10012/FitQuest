@@ -25,4 +25,21 @@ final class HealthTypeAdapter {
             return ""
         }
     }
+    
+    static func StringToHKQuantityTypeIdentifier(_ category: String) -> HKQuantityTypeIdentifier? {
+        switch category {
+        case "appleExerciseTime":
+            return .appleExerciseTime
+        case "stepCount":
+            return .stepCount
+        case "distanceWalkingRunning":
+            return .distanceWalkingRunning
+        case "distanceCycling":
+            return .distanceCycling
+        case "flightsClimbed":
+            return .flightsClimbed
+        default:
+            return nil
+        }
+    }
 }
