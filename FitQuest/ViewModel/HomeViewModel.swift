@@ -114,7 +114,7 @@ class GoalCellViewModel: ObservableObject {
         
         let foobar = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
         
-        self.goalLabel = goal.type
+        self.goalLabel = goal.display
         self.goalStatusLabel = "\(healthStat.stat)/\(foobar)" // ex: Step Count ~ "2,000/5,000 steps"
     }
     

@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class Goal: Object {
+    @Persisted var display: String = "" // same as 'type' but nicer to read
     @Persisted var type: String = "" // Corrosponds to HKQuantityTypeIdentifier
     @Persisted var difficulty: String = "" // Trivial, Easy, Normal, Hard
     @Persisted var didCompleteToday: Bool = false

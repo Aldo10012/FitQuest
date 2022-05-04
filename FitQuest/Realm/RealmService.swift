@@ -20,6 +20,7 @@ class RealmService {
         do {
             self.realm = try Realm()
         } catch {
+            print("ERROR geting Realm():", error)
             realm = nil
         }
         print("FILE PATH:", Realm.Configuration.defaultConfiguration.fileURL)
@@ -60,10 +61,11 @@ class RealmService {
     }
     
     /// add new goal
-    func createNewGoal(type: String, difficulty: String) {
+    func createNewGoal(display: String, type: String, difficulty: String) {
         // create new goal
         var newGoal = Goal()
         newGoal.type = type
+        newGoal.display = display
         newGoal.difficulty = difficulty
         
         // get current user

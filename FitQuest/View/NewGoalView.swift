@@ -25,6 +25,7 @@ struct NewGoalView: View {
                                 .background(Color.white)
                                 .onTapGesture {
                                     viewModel.selectedType = type.typeName
+                                    viewModel.selectedDisplay = type.displayName
                                 }
                         }
                     }

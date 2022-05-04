@@ -55,6 +55,15 @@ struct HomeView: View {
         
         .onAppear {
             viewModel.requestAuthorization()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                viewModel.getUserGoals()
+                
+                if viewModel.goalsList.count > 0 {
+                    print("GOALS:\n", viewModel.goalsList[0].goalLabel, viewModel.goalsList[0].goalStatusLabel)
+
+                }
+            }
+            
         }
     }
     

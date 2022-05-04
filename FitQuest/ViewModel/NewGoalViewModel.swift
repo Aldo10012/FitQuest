@@ -13,6 +13,11 @@ struct TypeListItem: Hashable {
 }
 
 class NewGoalViewModel: ObservableObject {
+    @Published var selectedDisplay: String = "" {
+        didSet {
+            setupGoalLabel()
+        }
+    }
     @Published var selectedType: String = "" {
         didSet {
             setupGoalLabel()
@@ -47,6 +52,10 @@ class NewGoalViewModel: ObservableObject {
     
     func addNewGoal() {
         let realmService = RealmService.shared
-        realmService.createNewGoal(type: selectedType, difficulty: selectedDifficulty)
+        realmService.createNewGoal(
+            display: selectedDisplay,
+            type: selectedType,
+            difficulty: selectedDifficulty
+        )
     }
 }
