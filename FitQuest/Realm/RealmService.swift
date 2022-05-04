@@ -11,7 +11,7 @@ class RealmService {
     
     // MARK: - Properties
     
-    var shared = RealmService()
+    static let shared = RealmService()
     var realm: Realm?
     
     // MARK: - Init
@@ -22,7 +22,7 @@ class RealmService {
         } catch {
             realm = nil
         }
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print("FILE PATH:", Realm.Configuration.defaultConfiguration.fileURL)
     }
     
     // MARK: - Methods
@@ -39,9 +39,18 @@ class RealmService {
         var currentUser: User!
         
         if allUsers.count == 0 {
+            // create new user
             let newUser = User()
             newUser.username = "Bob Booby"
             newUser.email = "fakeName@email.com"
+            newUser.setLevel1Stats()
+            
+            // save to Realm database
+            try! realm.write {
+                realm.add(newUser)
+            }
+            
+            // set currentUser
             currentUser = newUser
         } else {
             currentUser = allUsers[0]

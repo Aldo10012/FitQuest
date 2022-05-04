@@ -18,13 +18,15 @@ class HomeViewModel: ObservableObject {
     @Published var exp: Int = 0
     @Published var expNeededToLevelUp: Int = 0
     @Published var level: Int = 0
+    @Published var currentUser: User?
     
     var healthService = HealthKitService()
     
     // MARK: Init
     
     init() {
-        
+        currentUser = RealmService.shared.getCurrentUser()
+        print("Current User", currentUser)
     }
     
     func requestAuthorization() {

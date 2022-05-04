@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Goal: Object {
-    @objc dynamic var type: String = "" // Corrosponds to HKQuantityTypeIdentifier
-    @objc dynamic var difficulty: String = "" // Trivial, Easy, Normal, Hard
-    @objc dynamic var didCompleteToday: Bool = false
+    @Persisted var type: String = "" // Corrosponds to HKQuantityTypeIdentifier
+    @Persisted var difficulty: String = "" // Trivial, Easy, Normal, Hard
+    @Persisted var didCompleteToday: Bool = false
 }

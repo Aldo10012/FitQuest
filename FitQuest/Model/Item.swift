@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Item: Object {
-    @objc dynamic var name: String = ""
-    @objc dynamic var price: Int = 0
-    @objc dynamic var levelRequired: Int = 0
+    @Persisted var name: String = ""
+    @Persisted var price: Int = 0
+    @Persisted var levelRequired: Int = 0
 }
