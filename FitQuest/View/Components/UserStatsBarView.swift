@@ -10,8 +10,8 @@ import SwiftUI
 struct UserStatsBarView: View {
     
     @State var statType: String
-    @State var currentAmount: Int
-    @State var maxAmount: Int
+    @Binding var currentAmount: Int
+    @Binding var maxAmount: Int
     var color: Color
     
     var body: some View {
@@ -50,6 +50,6 @@ struct UserStatsBarView: View {
 
 struct UserStatsBarView_Previews: PreviewProvider {
     static var previews: some View {
-        UserStatsBarView(statType: "Health", currentAmount: 10, maxAmount: 10, color: .red)
+        UserStatsBarView(statType: "Health", currentAmount: .constant(10), maxAmount: .constant(10), color: .red)
     }
 }

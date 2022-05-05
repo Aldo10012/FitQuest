@@ -23,16 +23,27 @@ struct HomeView: View {
                     Spacer()
                     
                     VStack(spacing: 15) {
-                        UserStatsBarView(statType: "Health", currentAmount: 10, maxAmount: 10, color: .red)
-                        UserStatsBarView(statType: "Exp", currentAmount: 10, maxAmount: 10, color: .yellow)
+                        UserStatsBarView(
+                            statType: "Health",
+                            currentAmount: $viewModel.health,
+                            maxAmount: $viewModel.maxHealth,
+                            color: .red
+                        )
+                        
+                        UserStatsBarView(
+                            statType: "Exp",
+                            currentAmount: $viewModel.exp,
+                            maxAmount: $viewModel.expNeededToLevelUp,
+                            color: .yellow
+                        )
                     }
                     .frame(maxWidth: .infinity)
                 }
                 
                 HStack() {
-                    Text("Level \(1)")
+                    Text("Level \(viewModel.level)")
                     Spacer()
-                    Text("Coins \(100)")
+                    Text("Coins \(viewModel.coins)")
                 }
                 
                 ScrollView(.vertical) {
@@ -63,13 +74,9 @@ struct HomeView: View {
         
         .onAppear {
             viewModel.requestAuthorization()
+            viewModel.getUserStats()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 viewModel.getUserGoals()
-                
-                if viewModel.goalsList.count > 0 {
-                    print("GOALS:\n", viewModel.goalsList[0].goalLabel, viewModel.goalsList[0].goalStatusLabel)
-
-                }
             }
             
         }
