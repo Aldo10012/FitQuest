@@ -51,8 +51,17 @@ struct HomeView: View {
                 List {
                     ForEach(viewModel.goalsList, id: \.self) { goal in
                         GoalCellView(viewModel: goal)
+                            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                Button(action: { print("Edit") }) {
+                                    Text("Edit")
+                                }.tint(.orange)
+                            }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button(action: { viewModel.deleteGoal(goal) }) {
+                                    Text("Delete")
+                                }.tint(.red)
+                            }
                     }
-                    .onDelete(perform: delete)
                 }
                 
                 Spacer()
@@ -80,13 +89,6 @@ struct HomeView: View {
             }
             
         }
-    }
-    
-    
-    func delete(at offsets: IndexSet) {
-        print("DELETING")
-        // TODO: delete the selected goal
-//        viewModel.goalsList.remove(atOffsets: offsets)
     }
     
 }

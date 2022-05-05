@@ -98,6 +98,11 @@ class HomeViewModel: ObservableObject {
         print(goalsList)
     }
     
+    func deleteGoal(_ goalvm: GoalCellViewModel) {
+        realmService.deleteGoal(goalvm.goal)
+        self.goalsList.removeAll { $0 == goalvm }
+    }
+    
     
     // MARK: - Observers
     func addObservers() {

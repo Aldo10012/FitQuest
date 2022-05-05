@@ -90,5 +90,16 @@ class RealmService {
         let goals = currentUser.goals
         return goals
     }
+    
+    func deleteGoal(_ goal: Goal) {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        
+        try! realm?.write {
+            realm?.delete(goal)
+        }
+    }
 
 }
