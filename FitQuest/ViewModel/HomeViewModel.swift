@@ -26,7 +26,7 @@ class HomeViewModel: ObservableObject {
     var realmService = RealmService.shared
     
     var healthStats: [HealthStat] = []
-    var goalsList: [GoalCellViewModel] = [] // for the TableView
+    @Published var goalsList: [GoalCellViewModel] = [] // for the TableView
     
     // MARK: Init
     
@@ -96,26 +96,4 @@ class HomeViewModel: ObservableObject {
 }
 
 
-// TODO: move to another file & create SwiftUI view to go with it
-class GoalCellViewModel: ObservableObject {
-    
-    // MARK: - Properties
-    var goal: Goal!
-    var healthStat: HealthStat!
 
-    var goalLabel: String!
-    var goalStatusLabel: String!
-    
-    // MARK: - Init
-    convenience init(goal: Goal, healthStat: HealthStat) {
-        self.init()
-        self.goal = goal
-        self.healthStat = healthStat
-        
-        let foobar = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
-        
-        self.goalLabel = goal.display
-        self.goalStatusLabel = "\(healthStat.stat)/\(foobar)" // ex: Step Count ~ "2,000/5,000 steps"
-    }
-    
-}

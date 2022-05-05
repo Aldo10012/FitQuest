@@ -35,6 +35,14 @@ struct HomeView: View {
                     Text("Coins \(100)")
                 }
                 
+                ScrollView(.vertical) {
+                    VStack() {
+                        ForEach(viewModel.goalsList, id: \.self) { goal in
+                            GoalCellView(viewModel: goal)
+                        }
+                    }
+                }
+                
                 Spacer()
                 
             }
