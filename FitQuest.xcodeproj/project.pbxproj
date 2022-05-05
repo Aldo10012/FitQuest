@@ -30,6 +30,7 @@
 		636B746228226DA200CFBA9A /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B746128226DA200CFBA9A /* ItemStore.swift */; };
 		637D77E628238F1400944D79 /* GoalCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D77E528238F1400944D79 /* GoalCellView.swift */; };
 		637D77E82823919700944D79 /* GoalCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D77E72823919700944D79 /* GoalCellViewModel.swift */; };
+		637D77EA282398CB00944D79 /* NSNotification-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637D77E9282398CB00944D79 /* NSNotification-ext.swift */; };
 		6387EB1A2822DBCE0032484E /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB192822DBCE0032484E /* NewGoalViewModel.swift */; };
 		6387EB1C2822EAA40032484E /* GoalCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1B2822EAA40032484E /* GoalCreater.swift */; };
 		6387EB1E2822EB3B0032484E /* Color-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1D2822EB3B0032484E /* Color-ext.swift */; };
@@ -59,6 +60,7 @@
 		636B746128226DA200CFBA9A /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		637D77E528238F1400944D79 /* GoalCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCellView.swift; sourceTree = "<group>"; };
 		637D77E72823919700944D79 /* GoalCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCellViewModel.swift; sourceTree = "<group>"; };
+		637D77E9282398CB00944D79 /* NSNotification-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification-ext.swift"; sourceTree = "<group>"; };
 		6387EB192822DBCE0032484E /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		6387EB1B2822EAA40032484E /* GoalCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreater.swift; sourceTree = "<group>"; };
 		6387EB1D2822EB3B0032484E /* Color-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-ext.swift"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				63075BD32820D95E003EB40D /* Date-ext.swift */,
 				6387EB1D2822EB3B0032484E /* Color-ext.swift */,
+				637D77E9282398CB00944D79 /* NSNotification-ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */,
+				637D77EA282398CB00944D79 /* NSNotification-ext.swift in Sources */,
 				63075BCD2820CBE0003EB40D /* User.swift in Sources */,
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,
 				637D77E628238F1400944D79 /* GoalCellView.swift in Sources */,

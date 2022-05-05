@@ -57,5 +57,7 @@ class NewGoalViewModel: ObservableObject {
             type: selectedType,
             difficulty: selectedDifficulty
         )
+        
+        NotificationCenter.default.post(name: .addNewGoal, object: nil)
     }
 }

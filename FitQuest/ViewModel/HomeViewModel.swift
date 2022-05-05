@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+//import SwiftUI
 
 // TODO: create a real viewModel
 
@@ -33,6 +33,10 @@ class HomeViewModel: ObservableObject {
     init() {
         currentUser = RealmService.shared.getCurrentUser()
         print("Current User", currentUser)
+        addObservers()
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - HealthKit methods
@@ -92,6 +96,17 @@ class HomeViewModel: ObservableObject {
         }
         goalsList = goalCellVMList
         print(goalsList)
+    }
+    
+    
+    // MARK: - Observers
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserGoals), name: .addNewGoal, object: nil)
+    }
+    
+    @objc func updateUserGoals() {
+        print("Update did happen")
+        getUserGoals()
     }
 }
 
