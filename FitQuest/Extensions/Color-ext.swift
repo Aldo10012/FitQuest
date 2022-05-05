@@ -14,9 +14,7 @@ extension Color {
         return Color.init(red: red/255, green: green/255, blue: blue/255)
     }
     
-    public static var gray1: Color {
-        return Color.rgb(196, 196, 196)
+    public static var cardBGColor: Color {
+        return Color.rgb(235, 235, 235)
     }
-    
-    
 }

@@ -15,11 +15,15 @@ struct GoalCellView: View {
         HStack(spacing: 10) {
             Rectangle()
                 .frame(width: 30, height: 30)
-                .foregroundColor(.gray1)
+                .foregroundColor(.gray)
             Text("\(viewModel.goalLabel)")
             Spacer()
             Text("\(viewModel.goalStatusLabel)")
+                .font(.callout)
         }
+        .padding()
+        .background(Color.cardBGColor)
+        .cornerRadius(10)
     }
     
     

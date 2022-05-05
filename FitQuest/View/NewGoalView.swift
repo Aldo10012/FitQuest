@@ -31,7 +31,7 @@ struct NewGoalView: View {
                     }
                 }
                 .padding(.vertical, 20)
-                .background(Color.gray1)
+                .background(Color.cardBGColor)
                 .cornerRadius(15)
                 
                 Text("Select Difficulty")
@@ -49,7 +49,7 @@ struct NewGoalView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)
-                .background(Color.gray1)
+                .background(Color.cardBGColor)
                 .cornerRadius(15)
                 
                 Spacer()
