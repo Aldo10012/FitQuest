@@ -21,9 +21,9 @@ struct GoalCellView: View {
             Text("\(viewModel.goalStatusLabel)")
                 .font(.callout)
         }
-        .padding()
-        .background(Color.cardBGColor)
-        .cornerRadius(10)
+//        .padding()
+//        .background(Color.cardBGColor)
+//        .cornerRadius(10)
     }
     
     

@@ -39,25 +39,25 @@ struct HomeView: View {
                     }
                     .frame(maxWidth: .infinity)
                 }
+                .padding(.horizontal)
                 
                 HStack() {
                     Text("Level \(viewModel.level)")
                     Spacer()
                     Text("Coins \(viewModel.coins)")
                 }
+                .padding(.horizontal)
                 
-                ScrollView(.vertical) {
-                    VStack() {
-                        ForEach(viewModel.goalsList, id: \.self) { goal in
-                            GoalCellView(viewModel: goal)
-                        }
+                List {
+                    ForEach(viewModel.goalsList, id: \.self) { goal in
+                        GoalCellView(viewModel: goal)
                     }
+                    .onDelete(perform: delete)
                 }
                 
                 Spacer()
                 
             }
-            .padding()
             .navigationBarTitle(Text("Title"), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -80,6 +80,13 @@ struct HomeView: View {
             }
             
         }
+    }
+    
+    
+    func delete(at offsets: IndexSet) {
+        print("DELETING")
+        // TODO: delete the selected goal
+//        viewModel.goalsList.remove(atOffsets: offsets)
     }
     
 }
