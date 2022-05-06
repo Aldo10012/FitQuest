@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject private var viewModel = HomeViewModel()
-    @State var showModal: Bool = false
+    @State var showCreateModal: Bool = false
+    @State var showEditModal: Bool = false
     
     var body: some View {
         NavigationView {
@@ -52,18 +53,17 @@ struct HomeView: View {
                     ForEach(viewModel.goalsList, id: \.self) { goal in
                         GoalCellView(viewModel: goal)
                             .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                Button(action: { showModal.toggle() }) {
+                                Button(action: { showEditModal.toggle() }) {
                                     Text("Edit")
-                                }
-                                .tint(.orange)
-                                .sheet(isPresented: $showModal) {
-                                    NewGoalView(showSheetView: $showModal, action: .edit, initialGoal: goal.goal)
-                                }
+                                }.tint(.orange)
                             }
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(action: { viewModel.deleteGoal(goal) }) {
                                     Text("Delete")
                                 }.tint(.red)
+                            }
+                            .sheet(isPresented: $showEditModal) {
+                                NewGoalView(showSheetView: $showEditModal, action: .edit, initialGoal: goal.goal)
                             }
                     }
                 }
@@ -75,10 +75,10 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add") {
-                        showModal.toggle()
+                        showCreateModal.toggle()
                     }
-                    .sheet(isPresented: $showModal) {
-                        NewGoalView(showSheetView: $showModal, action: .create)
+                    .sheet(isPresented: $showCreateModal) {
+                        NewGoalView(showSheetView: $showCreateModal, action: .create)
                     }
                 }
             }
