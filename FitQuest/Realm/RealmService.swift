@@ -26,7 +26,7 @@ class RealmService {
         print("FILE PATH:", Realm.Configuration.defaultConfiguration.fileURL)
     }
     
-    // MARK: - Methods
+    // MARK: - User Methods
     
     // TODO: Update this method when introducing user registration/authentication
     /// get current user
@@ -60,6 +60,8 @@ class RealmService {
         return currentUser
     }
     
+    // MARK: Goal Methods
+    
     /// add new goal
     func createNewGoal(display: String, type: String, difficulty: String) {
         // create new goal
@@ -81,6 +83,7 @@ class RealmService {
         
     }
     
+    /// get list of current user's goals
     func getUserGoals() -> List<Goal>? {
         guard let currentUser = self.getCurrentUser() else {
             print("No current user")
@@ -91,6 +94,16 @@ class RealmService {
         return goals
     }
     
+    /// edit a given goal
+    func editGoal(_ goalToEdit: Goal, display: String, type: String, difficulty: String) {
+        try! realm?.write {
+            goalToEdit.display = display
+            goalToEdit.type = type
+            goalToEdit.difficulty = difficulty
+        }
+    }
+    
+    /// deleat a given goal
     func deleteGoal(_ goal: Goal) {
         guard let currentUser = self.getCurrentUser() else {
             print("No current user")

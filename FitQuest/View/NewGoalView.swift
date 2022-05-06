@@ -7,9 +7,17 @@
 
 import SwiftUI
 
+enum GoalCreateOrEdit {
+    case create
+    case edit
+}
+
 struct NewGoalView: View {
     @Binding var showSheetView: Bool
     @ObservedObject var viewModel = NewGoalViewModel()
+    @State var action: GoalCreateOrEdit
+    @State var initialGoal: Goal? = nil
+    
     
     var body: some View {
         NavigationView {
@@ -73,13 +81,32 @@ struct NewGoalView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Create", action: didTapCreate)
+                    if action == .create {
+                        Button("Create", action: didTapCreate)
+                    } else {
+                        Button("Edit", action: didTapEdit)
+                    }
                 }
                 
             }
             
         }
+        .onAppear {
+            print(action)
+            print(initialGoal)
+            
+            switch action {
+            case .create:
+                break
+            case .edit:
+                viewModel.selectedType = initialGoal!.type
+                viewModel.selectedDisplay = initialGoal!.display
+                viewModel.selectedDifficulty = initialGoal!.difficulty
+                viewModel.goalToEdit = initialGoal
+            }
+        }
     }
+        
     
     func didTapCancel() {
         showSheetView = false
@@ -89,10 +116,15 @@ struct NewGoalView: View {
         viewModel.addNewGoal()
         showSheetView = false
     }
+    
+    func didTapEdit() {
+        viewModel.editWorkout()
+        showSheetView = false
+    }
 }
 
 struct NewGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        NewGoalView(showSheetView: .constant(true))
+        NewGoalView(showSheetView: .constant(true), action: .create)
     }
 }

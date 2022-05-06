@@ -52,9 +52,13 @@ struct HomeView: View {
                     ForEach(viewModel.goalsList, id: \.self) { goal in
                         GoalCellView(viewModel: goal)
                             .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                Button(action: { print("Edit") }) {
+                                Button(action: { showModal.toggle() }) {
                                     Text("Edit")
-                                }.tint(.orange)
+                                }
+                                .tint(.orange)
+                                .sheet(isPresented: $showModal) {
+                                    NewGoalView(showSheetView: $showModal, action: .edit, initialGoal: goal.goal)
+                                }
                             }
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button(action: { viewModel.deleteGoal(goal) }) {
@@ -74,7 +78,7 @@ struct HomeView: View {
                         showModal.toggle()
                     }
                     .sheet(isPresented: $showModal) {
-                        NewGoalView(showSheetView: $showModal)
+                        NewGoalView(showSheetView: $showModal, action: .create)
                     }
                 }
             }

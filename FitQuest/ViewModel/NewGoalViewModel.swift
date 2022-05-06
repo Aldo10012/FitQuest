@@ -30,6 +30,7 @@ class NewGoalViewModel: ObservableObject {
     }
     
     @Published var yourGoal: String = "Your Goal: N/A"
+    var goalToEdit: Goal? = nil
     
     let typeList: [TypeListItem] = [        
         TypeListItem(displayName: "Exercise Time",   typeName: "appleExerciseTime"),
@@ -58,6 +59,11 @@ class NewGoalViewModel: ObservableObject {
             difficulty: selectedDifficulty
         )
         
+        NotificationCenter.default.post(name: .addNewGoal, object: nil)
+    }
+    
+    func editWorkout() {
+        RealmService.shared.editGoal(goalToEdit!, display: selectedDisplay, type: selectedType, difficulty: selectedDifficulty)
         NotificationCenter.default.post(name: .addNewGoal, object: nil)
     }
 }
