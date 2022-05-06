@@ -31,6 +31,9 @@ struct NewGoalView: View {
                             Text(type.displayName)
                                 .padding()
                                 .background(Color.white)
+                                .foregroundColor(
+                                    type.typeName == viewModel.selectedType ? .red : .black
+                                )
                                 .onTapGesture {
                                     viewModel.selectedType = type.typeName
                                     viewModel.selectedDisplay = type.displayName
@@ -50,6 +53,9 @@ struct NewGoalView: View {
                         Text(difficulty)
                             .padding()
                             .background(Color.white)
+                            .foregroundColor(
+                                viewModel.selectedDifficulty == difficulty ? .red : .black
+                            )
                             .onTapGesture {
                                 viewModel.selectedDifficulty = difficulty
                             }
