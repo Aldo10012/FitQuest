@@ -11,6 +11,7 @@ import HealthKit
 class HealthKitService {
     
     // MARK: - Properties
+    typealias HealthStatResult = Result<[HealthStat], HealthKitError>
     
     var healthStore: HKHealthStore?
     var query: HKStatisticsCollectionQuery?
@@ -38,7 +39,6 @@ class HealthKitService {
             return
         }
         
-        
         healthStore.requestAuthorization(toShare: [], read: HealthType.allTypes) { success, error in
             switch success {
             case true:
@@ -52,7 +52,7 @@ class HealthKitService {
     // MARK: Request HK stats
     
     /// request the health stats of all categories we're keeping track of
-    func requestAllHealthStat(_ completion: @escaping (Result<[HealthStat], HealthKitError>) -> ()) {
+    func requestAllHealthStat(_ completion: @escaping (HealthStatResult) -> ()) {
         let dg = DispatchGroup()
         var results = [HealthStat]()
         
@@ -77,7 +77,7 @@ class HealthKitService {
     }
     
     /// requests the health stats of a given category
-    func requestHealthStat(for category: HKQuantityTypeIdentifier, completion: @escaping (Result<[HealthStat], HealthKitError>) -> ()) {
+    func requestHealthStat(for category: HKQuantityTypeIdentifier, completion: @escaping (HealthStatResult) -> ()) {
         guard let store = healthStore else { return }
         let type = HealthType.getType(of: category)
         
@@ -87,11 +87,9 @@ class HealthKitService {
         let daily = DateComponents(day: 1)
         
         var healthStats = [HealthStat]()
-        
         let predicate = HKQuery.predicateForSamples(withStart: startData, end: endDate, options: .strictStartDate)
         
         query = HKStatisticsCollectionQuery(quantityType: type, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
-        
         
         query?.initialResultsHandler = { query, statistics, error in
             statistics?.enumerateStatistics(from: startData, to: endDate, with: { stats, _ in
