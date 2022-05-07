@@ -23,7 +23,7 @@ class GoalCellViewModel: ObservableObject {
         self.goal = goal
         self.healthStat = healthStat
 
-        let foo: String = (healthStat.stat != nil) ? "\(healthStat.stat!)" : "0"
+        let foo: String = (healthStat.stat != nil) ? "\( Int(healthStat.stat!.doubleValue(for: .count())) )" : "0"
         let bar = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
         
         self.goalLabel = goal.display

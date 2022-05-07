@@ -34,6 +34,7 @@
 		6387EB1A2822DBCE0032484E /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB192822DBCE0032484E /* NewGoalViewModel.swift */; };
 		6387EB1C2822EAA40032484E /* GoalCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1B2822EAA40032484E /* GoalCreater.swift */; };
 		6387EB1E2822EB3B0032484E /* Color-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1D2822EB3B0032484E /* Color-ext.swift */; };
+		63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		6387EB192822DBCE0032484E /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		6387EB1B2822EAA40032484E /* GoalCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreater.swift; sourceTree = "<group>"; };
 		6387EB1D2822EB3B0032484E /* Color-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-ext.swift"; sourceTree = "<group>"; };
+		63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletionValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				6387EB1B2822EAA40032484E /* GoalCreater.swift */,
+				63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				63075BD12820D6A3003EB40D /* HealthType.swift in Sources */,
 				636B746028226D6500CFBA9A /* NewGoalView.swift in Sources */,
 				636B745B2822478000CFBA9A /* Item.swift in Sources */,
+				63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */,
 				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,
 				63075BCF2820CBF6003EB40D /* HomeViewModel.swift in Sources */,
 				63075BB12820C782003EB40D /* FitQuestApp.swift in Sources */,
