@@ -56,7 +56,7 @@ class HomeViewModel: ObservableObject {
         healthService.requestAllHealthStat() { [weak self] result in
             switch result {
             case let .success(healthStats):
-                self?.healthStats += healthStats
+                self?.healthStats = healthStats
                 print("HS", self?.healthStats)
 
             case let .failure(error):

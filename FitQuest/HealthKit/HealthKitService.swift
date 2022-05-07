@@ -53,19 +53,27 @@ class HealthKitService {
     
     /// request the health stats of all categories we're keeping track of
     func requestAllHealthStat(_ completion: @escaping (Result<[HealthStat], HealthKitError>) -> ()) {
+        let dg = DispatchGroup()
+        var results = [HealthStat]()
         
         for category in HealthType.allHKQuantityTypeIdentifiers {
+            dg.enter()
             requestHealthStat(for: category) { result in
                 switch result {
                 case let .success(healthStatsResult):
-                    completion(Result.success(healthStatsResult))
+                    results += healthStatsResult
+                    //completion(Result.success(healthStatsResult))
                 case let .failure(error):
                     print(error.rawValue)
-                    completion(Result.failure(error))
+                    //completion(Result.failure(error))
                 }
+                dg.leave()
             }
         }
         
+        dg.notify(queue: .main) {
+            completion(.success(results))
+        }
     }
     
     /// requests the health stats of a given category
