@@ -16,11 +16,12 @@ class GoalCompletionValidator {
     // TODO: create a method that checks each of the current user's goals and determines if it is completed or not
     func checkGoalCompletin() {
         let queue = OperationQueue()
+        let semaphore = DispatchSemaphore(value: 0)
+        let bgQueue = DispatchQueue.global(qos: .background)
+        
         var healthStatsList = [HealthStat]()
         var listOfGoals = [Goal]()
         
-//        @ThreadSafe var healthStatsList_ref = healthStatsList
-//        @ThreadSafe var listOfGoals_ref = listOfGoals
         
         // STEP 1: Get Health Stats
         let getHealthStats = BlockOperation{
@@ -32,42 +33,52 @@ class GoalCompletionValidator {
                 case let .failure(error):
                     print(error.rawValue)
                 }
+                semaphore.signal()
             }
         }
         
         // STEP 2: Get User Goals
         let getUserGoals = BlockOperation{
             print("Execute Operation 2")
-            let currentUser = self.realmService.getCurrentUser()
-            listOfGoals = Array(currentUser!.goals)
+            DispatchQueue.main.async {
+                let currentUser = self.realmService.getCurrentUser()
+                listOfGoals = Array(currentUser!.goals)
+                semaphore.signal()
+            }
+            
         }
         
         // STEP 3: Calculate if goal was completed or not
         let checkForCompletion = BlockOperation {
             print("Execute Operation 3")
-            if listOfGoals.isEmpty { return }
-            
-            for goal in listOfGoals {
-                let healthStat: HealthStat = (healthStatsList.filter { $0.type == goal.type }).first!
-                let foo = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
+            DispatchQueue.main.async {
+                if listOfGoals.isEmpty { return }
                 
-                print(healthStat.stat?.doubleValue(for: .count()))
-                print(foo)
-                
-                // TODO: determine if user met goal and update current user stats
-                
+                for goal in listOfGoals {
+                    let healthStat: HealthStat = (healthStatsList.filter { $0.type == goal.type }).first!
+                    let foo = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
+                    
+                    print("TESTING")
+                    print(healthStat.stat?.doubleValue(for: .count()))
+                    print(foo)
+                    
+                    // TODO: determine if user met goal and update current user stats
+                    
+                }
+                semaphore.signal()
             }
+            
         }
         
-        // configure operations
-        getHealthStats.qualityOfService = .utility
-        
-        getUserGoals.qualityOfService = .utility
-        getUserGoals.addDependency(getHealthStats)
-        
-        checkForCompletion.qualityOfService = .utility
-        checkForCompletion.addDependency(getUserGoals)
-        
-        queue.addOperations([getHealthStats, getUserGoals, checkForCompletion], waitUntilFinished: true)
+        bgQueue.async {
+            getHealthStats.start()
+            semaphore.wait()
+            
+            getUserGoals.start()
+            semaphore.wait()
+            
+            checkForCompletion.start()
+            semaphore.wait()
+        }
     }
 }

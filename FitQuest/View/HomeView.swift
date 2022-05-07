@@ -92,6 +92,7 @@ struct HomeView: View {
                 viewModel.getUserGoals()
             }
             
+            GoalCompletionValidator().checkGoalCompletin()
         }
     }
     
