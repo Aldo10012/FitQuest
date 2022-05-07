@@ -84,14 +84,14 @@ class RealmService {
     }
     
     /// get list of current user's goals
-    func getUserGoals() -> List<Goal>? {
+    func getUserGoals() -> [Goal]? {
         guard let currentUser = self.getCurrentUser() else {
             print("No current user")
             return nil
         }
         
         let goals = currentUser.goals
-        return goals
+        return Array(goals)
     }
     
     /// edit a given goal
