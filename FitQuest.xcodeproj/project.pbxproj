@@ -21,6 +21,9 @@
 		63075BD42820D95E003EB40D /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD32820D95E003EB40D /* Date-ext.swift */; };
 		63075BD62820E522003EB40D /* HealthStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63075BD52820E522003EB40D /* HealthStat.swift */; };
 		63075BDA2820E803003EB40D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63075BD92820E803003EB40D /* HealthKit.framework */; };
+		63477DF528275262006E413F /* GoalCompletinoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63477DF428275262006E413F /* GoalCompletinoManager.swift */; };
+		63477DF7282755E3006E413F /* LevelingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63477DF6282755E3006E413F /* LevelingManager.swift */; };
+		63477DF928275BE6006E413F /* String-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63477DF828275BE6006E413F /* String-ext.swift */; };
 		636B7455282202A800CFBA9A /* HealthKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B7454282202A800CFBA9A /* HealthKitError.swift */; };
 		636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B74562822443600CFBA9A /* HealthTypeAdapter.swift */; };
 		636B74592822476000CFBA9A /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636B74582822476000CFBA9A /* Goal.swift */; };
@@ -52,6 +55,9 @@
 		63075BD52820E522003EB40D /* HealthStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStat.swift; sourceTree = "<group>"; };
 		63075BD72820E803003EB40D /* FitQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitQuest.entitlements; sourceTree = "<group>"; };
 		63075BD92820E803003EB40D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		63477DF428275262006E413F /* GoalCompletinoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletinoManager.swift; sourceTree = "<group>"; };
+		63477DF6282755E3006E413F /* LevelingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelingManager.swift; sourceTree = "<group>"; };
+		63477DF828275BE6006E413F /* String-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-ext.swift"; sourceTree = "<group>"; };
 		636B7454282202A800CFBA9A /* HealthKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitError.swift; sourceTree = "<group>"; };
 		636B74562822443600CFBA9A /* HealthTypeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTypeAdapter.swift; sourceTree = "<group>"; };
 		636B74582822476000CFBA9A /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 				63075BD32820D95E003EB40D /* Date-ext.swift */,
 				6387EB1D2822EB3B0032484E /* Color-ext.swift */,
 				637D77E9282398CB00944D79 /* NSNotification-ext.swift */,
+				63477DF828275BE6006E413F /* String-ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,6 +215,8 @@
 			children = (
 				6387EB1B2822EAA40032484E /* GoalCreater.swift */,
 				63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */,
+				63477DF428275262006E413F /* GoalCompletinoManager.swift */,
+				63477DF6282755E3006E413F /* LevelingManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -295,6 +304,8 @@
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,
 				637D77E628238F1400944D79 /* GoalCellView.swift in Sources */,
 				63075BB32820C782003EB40D /* HomeView.swift in Sources */,
+				63477DF928275BE6006E413F /* String-ext.swift in Sources */,
+				63477DF7282755E3006E413F /* LevelingManager.swift in Sources */,
 				636B74592822476000CFBA9A /* Goal.swift in Sources */,
 				6387EB1C2822EAA40032484E /* GoalCreater.swift in Sources */,
 				63075BC92820CAAC003EB40D /* RealmService.swift in Sources */,
@@ -303,6 +314,7 @@
 				636B746228226DA200CFBA9A /* ItemStore.swift in Sources */,
 				63075BD12820D6A3003EB40D /* HealthType.swift in Sources */,
 				636B746028226D6500CFBA9A /* NewGoalView.swift in Sources */,
+				63477DF528275262006E413F /* GoalCompletinoManager.swift in Sources */,
 				636B745B2822478000CFBA9A /* Item.swift in Sources */,
 				63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */,
 				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,

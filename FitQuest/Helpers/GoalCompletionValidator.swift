@@ -12,6 +12,7 @@ class GoalCompletionValidator {
     
     private let healthService = HealthKitService()
     private let realmService = RealmService.shared
+    private let goalCompletionManager = GoalCompletinoManager()
     
     // TODO: create a method that checks each of the current user's goals and determines if it is completed or not
     func checkGoalCompletin() {
@@ -56,11 +57,14 @@ class GoalCompletionValidator {
                 
                 for goal in listOfGoals {
                     let healthStat: HealthStat = (healthStatsList.filter { $0.type == goal.type }).first!
+                    let healthStatAsDouble = (healthStat.stat?.doubleValue(for: .count()))!
+                    
                     let foo = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
+                    let bar = foo.removeNonNumericCharacters()
                     
                     print("TESTING")
-                    print(healthStat.stat?.doubleValue(for: .count()))
-                    print(foo)
+                    print(healthStat.stat!, healthStatAsDouble)
+                    print(foo, bar)
                     
                     // TODO: determine if user met goal and update current user stats
                     
