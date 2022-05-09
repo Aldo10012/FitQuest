@@ -55,18 +55,38 @@ class GoalCompletionValidator {
             DispatchQueue.main.async {
                 if listOfGoals.isEmpty { return }
                 
+                print("Health Stat List:\n", healthStatsList)
+                
                 for goal in listOfGoals {
                     let healthStat: HealthStat = (healthStatsList.filter { $0.type == goal.type }).first!
-                    let healthStatAsDouble = (healthStat.stat?.doubleValue(for: .count()))!
-                    
-                    let foo = GoalCreater().getGoalFor(type: goal.type, difficulty: goal.difficulty)
-                    let bar = foo.removeNonNumericCharacters()
-                    
+                   
+                    // TODO: refactor this
+                    let healthStatAsString: String
+                    if healthStat.type == "distanceWalkingRunning" || healthStat.type == "distanceCycling" {
+                        healthStatAsString = (healthStat.stat != nil) ? "\( Double(healthStat.stat!.doubleValue(for: .mile())).roundToNearestTenth() )" : "0"
+                    } else {
+                        healthStatAsString = (healthStat.stat != nil) ? "\( Int(healthStat.stat!.doubleValue(for: .count())) )" : "0"
+                    }
+
+                    let aimedGoal = GoalCreater()
+                        .getGoalFor(type: goal.type, difficulty: goal.difficulty)
+                        .removeNonNumericCharacters()
+
                     print("TESTING")
-                    print(healthStat.stat!, healthStatAsDouble)
-                    print(foo, bar)
+                    print(healthStat.type)
+                    print("User accomplished:" , healthStatAsString)
+                    print("User aimed goal:  ", aimedGoal)
                     
                     // TODO: determine if user met goal and update current user stats
+                    if Double(healthStatAsString)! > Double(aimedGoal)! {
+                        // user passed
+                        print("USER DID PASS")
+                        self.goalCompletionManager.userDidSucceedGoal(withDifficulty: goal.difficulty)
+                    } else {
+                        // user failed
+                        print("USER DID FAIL")
+                        self.goalCompletionManager.userDidFailGoal(withDifficulty: goal.difficulty)
+                    }
                     
                 }
                 semaphore.signal()
