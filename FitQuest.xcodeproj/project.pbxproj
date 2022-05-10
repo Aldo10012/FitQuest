@@ -38,6 +38,8 @@
 		6387EB1A2822DBCE0032484E /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB192822DBCE0032484E /* NewGoalViewModel.swift */; };
 		6387EB1C2822EAA40032484E /* GoalCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1B2822EAA40032484E /* GoalCreater.swift */; };
 		6387EB1E2822EB3B0032484E /* Color-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1D2822EB3B0032484E /* Color-ext.swift */; };
+		63BC2F4A282A03C2001DCFD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F49282A03C2001DCFD8 /* RootView.swift */; };
+		63BC2F4C282A0409001DCFD8 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F4B282A0409001DCFD8 /* StoreView.swift */; };
 		63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		6387EB192822DBCE0032484E /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		6387EB1B2822EAA40032484E /* GoalCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreater.swift; sourceTree = "<group>"; };
 		6387EB1D2822EB3B0032484E /* Color-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-ext.swift"; sourceTree = "<group>"; };
+		63BC2F49282A03C2001DCFD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		63BC2F4B282A0409001DCFD8 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletionValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,8 @@
 				636B745C2822572800CFBA9A /* Components */,
 				63075BB22820C782003EB40D /* HomeView.swift */,
 				636B745F28226D6500CFBA9A /* NewGoalView.swift */,
+				63BC2F4B282A0409001DCFD8 /* StoreView.swift */,
+				63BC2F49282A03C2001DCFD8 /* RootView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,8 +309,10 @@
 			files = (
 				636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */,
 				637D77EA282398CB00944D79 /* NSNotification-ext.swift in Sources */,
+				63BC2F4C282A0409001DCFD8 /* StoreView.swift in Sources */,
 				63075BCD2820CBE0003EB40D /* User.swift in Sources */,
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,
+				63BC2F4A282A03C2001DCFD8 /* RootView.swift in Sources */,
 				637D77E628238F1400944D79 /* GoalCellView.swift in Sources */,
 				63075BB32820C782003EB40D /* HomeView.swift in Sources */,
 				63477DF928275BE6006E413F /* String-ext.swift in Sources */,
