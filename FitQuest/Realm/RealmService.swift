@@ -76,6 +76,16 @@ class RealmService {
             return
         }
         
+        // check if user already has that goal
+        let listOfGoals = getUserGoals()
+        let goalAlreadyExists: Bool = listOfGoals!.contains {
+            $0.type == type && $0.difficulty == difficulty
+        }
+        if goalAlreadyExists {
+            print("Goal already exists")
+            return
+        }
+        
         // add new goal to user.goals
         try! realm?.write {
             currentUser.goals.append(newGoal)
@@ -96,6 +106,16 @@ class RealmService {
     
     /// edit a given goal
     func editGoal(_ goalToEdit: Goal, display: String, type: String, difficulty: String) {
+        // check if user already has that goal
+        let listOfGoals = getUserGoals()
+        let goalAlreadyExists: Bool = listOfGoals!.contains {
+            $0.type == type && $0.difficulty == difficulty
+        }
+        if goalAlreadyExists {
+            print("Goal already exists")
+            return
+        }
+        
         try! realm?.write {
             goalToEdit.display = display
             goalToEdit.type = type
