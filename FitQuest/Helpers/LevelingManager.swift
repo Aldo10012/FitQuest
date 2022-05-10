@@ -6,38 +6,17 @@
 //
 
 import Foundation
-import RealmSwift
 
 class LevelingManager {
     
-    // MARK: - Properties
-    
-    private var currentUser: User
-    private var realm: Realm
-    
     // MARK: - Init
     
-    init(currentUser: User, realm: Realm) {
-        self.currentUser = currentUser
-        self.realm = realm
-    }
+    init() {}
     
     // MARK: - Level up user
     
-    func levelUp() {
-        let expSurplus = currentUser.expNeededToLevelUp % currentUser.exp
-        
-        try! realm.write({
-            currentUser.level += 1
-            currentUser.exp = expSurplus
-            currentUser.expNeededToLevelUp = getExpNeededToLevelUp()
-        })
-    }
-    
-    private func getExpNeededToLevelUp() -> Int {
-        let currentUsersCurrentLevel: Int = currentUser.level
-        
-        switch currentUsersCurrentLevel {
+    func getExpNeededToLevelUp(currentLevel: Int) -> Int {
+        switch currentLevel {
         case 1: return 25
         case 2: return 50
         case 3: return 75

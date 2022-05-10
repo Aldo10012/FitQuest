@@ -114,5 +114,49 @@ class RealmService {
             realm?.delete(goal)
         }
     }
+    
+    // MARK: Goal Completion Methods
+    
+    func userDidSucceedGoal(exp: Int, coins: Int) {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        
+        try! realm?.write {
+            currentUser.exp += exp
+            currentUser.coins += coins
+            
+            if currentUser.exp > currentUser.expNeededToLevelUp {
+                self.levelUp()
+            }
+        }
+    }
+    
+    func userDidFailGoal(hpLost: Int) {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        
+        try! realm?.write({
+            currentUser.hp -= hpLost
+        })
+    }
+    
+    func levelUp() {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        let lm = LevelingManager()
+        let expSurplus = currentUser.expNeededToLevelUp % currentUser.exp
+        
+        try! realm?.write({
+            currentUser.level += 1
+            currentUser.exp = expSurplus
+            currentUser.expNeededToLevelUp = lm.getExpNeededToLevelUp(currentLevel: currentUser.level)
+        })
+    }
 
 }

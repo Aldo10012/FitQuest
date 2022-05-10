@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 class GoalCompletionValidator {
     
@@ -16,7 +15,6 @@ class GoalCompletionValidator {
     
     // TODO: create a method that checks each of the current user's goals and determines if it is completed or not
     func checkGoalCompletin() {
-        let queue = OperationQueue()
         let semaphore = DispatchSemaphore(value: 0)
         let bgQueue = DispatchQueue.global(qos: .background)
         
@@ -77,13 +75,10 @@ class GoalCompletionValidator {
                     print("User accomplished:" , healthStatAsString)
                     print("User aimed goal:  ", aimedGoal)
                     
-                    // TODO: determine if user met goal and update current user stats
-                    if Double(healthStatAsString)! > Double(aimedGoal)! {
-                        // user passed
+                    if Double(healthStatAsString)! >= Double(aimedGoal)! {
                         print("USER DID PASS")
                         self.goalCompletionManager.userDidSucceedGoal(withDifficulty: goal.difficulty)
                     } else {
-                        // user failed
                         print("USER DID FAIL")
                         self.goalCompletionManager.userDidFailGoal(withDifficulty: goal.difficulty)
                     }
@@ -91,7 +86,6 @@ class GoalCompletionValidator {
                 }
                 semaphore.signal()
             }
-            
         }
         
         bgQueue.async {
