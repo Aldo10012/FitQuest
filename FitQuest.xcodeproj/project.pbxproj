@@ -41,6 +41,7 @@
 		63BC2F4A282A03C2001DCFD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F49282A03C2001DCFD8 /* RootView.swift */; };
 		63BC2F4C282A0409001DCFD8 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F4B282A0409001DCFD8 /* StoreView.swift */; };
 		63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */; };
+		63D66E98282C4CB300237104 /* ItemGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E97282C4CB300237104 /* ItemGalleryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		63BC2F49282A03C2001DCFD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		63BC2F4B282A0409001DCFD8 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletionValidator.swift; sourceTree = "<group>"; };
+		63D66E97282C4CB300237104 /* ItemGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGalleryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				636B745D2822574300CFBA9A /* UserStatsBarView.swift */,
+				63D66E97282C4CB300237104 /* ItemGalleryView.swift */,
 				637D77E528238F1400944D79 /* GoalCellView.swift */,
 			);
 			path = Components;
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D66E98282C4CB300237104 /* ItemGalleryView.swift in Sources */,
 				636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */,
 				637D77EA282398CB00944D79 /* NSNotification-ext.swift in Sources */,
 				63BC2F4C282A0409001DCFD8 /* StoreView.swift in Sources */,
