@@ -9,29 +9,31 @@ import SwiftUI
 
 struct StoreView: View {
     
-    let itemStore = ItemStore()
-    
-    let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
+    let viewModel = StoreViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack() {
-                    Text("Level \(1)")
+                    Text("Level \(viewModel.level)")
                     Spacer()
-                    Text("Coins \(10)")
+                    Text("Coins \(viewModel.coins)")
                 }
                 .padding(.horizontal)
                 
                 ScrollView {
-                    ItemGalleryView(label: "Weapons", itemList: itemStore.weaponsInventory)
-                    ItemGalleryView(label: "Armor", itemList: itemStore.armorInventory)
-                    ItemGalleryView(label: "Special Items", itemList: itemStore.specialItemsInventory)
+                    ItemGalleryView(
+                        label: "Weapons",
+                        itemList: viewModel.itemStore.weaponsInventory
+                    )
+                    ItemGalleryView(
+                        label: "Armor",
+                        itemList: viewModel.itemStore.armorInventory
+                    )
+                    ItemGalleryView(
+                        label: "Special Items",
+                        itemList: viewModel.itemStore.specialItemsInventory
+                    )
                 }
                 .padding(.horizontal)
                 
