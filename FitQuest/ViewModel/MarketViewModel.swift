@@ -14,6 +14,8 @@ class MarketViewModel: ObservableObject {
     
     @Published var level: Int = 0
     @Published var coins: Int = 0
+    @Published var cartCardIsShown: Bool = false
+    @Published var selectedItem: Item? = nil
     
     private var realmService = RealmService.shared
     let itemStore = ItemStore()
@@ -36,5 +38,11 @@ class MarketViewModel: ObservableObject {
         }
         level = currentUser.level
         coins = currentUser.coins
+    }
+    
+    func buyItem() {
+        realmService.buyItem(item: selectedItem!) { _ in
+            print("foo")
+        }
     }
 }

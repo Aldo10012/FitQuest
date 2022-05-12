@@ -17,6 +17,8 @@ struct ItemGalleryView: View {
     
     var label: String
     var itemList: [Item]
+    @Binding var shown: Bool
+    @Binding var selectedItem: Item?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,9 +35,14 @@ struct ItemGalleryView: View {
                         Text("🪙 \(item.price)")
                             .padding(.bottom, 15)
                         
-                    }.frame(maxWidth: .infinity)
-                        .frame(height: 110)
-                        .background(Color.cardBGColor)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 110)
+                    .background(Color.cardBGColor)
+                    .onTapGesture {
+                        shown = true
+                        selectedItem = item
+                    }
                     
                 }
             }
@@ -46,6 +53,6 @@ struct ItemGalleryView: View {
 
 struct ItemGalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemGalleryView(label: "Weapons", itemList: ItemStore().weaponsInventory)
+        ItemGalleryView(label: "Weapons", itemList: ItemStore().weaponsInventory, shown: .constant(false), selectedItem: .constant(nil))
     }
 }

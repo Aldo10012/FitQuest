@@ -190,6 +190,7 @@ class RealmService {
         if currentUser.coins < item.price {
             print("You don't have enough coins")
             completion(Result.failure(.notEnoughCoins))
+            return
         }
         
         try! realm?.write {
