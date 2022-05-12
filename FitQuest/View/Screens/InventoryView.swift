@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InventoryView: View {
     
-    var viewModel: InventoryViewModel
+    @ObservedObject var viewModel: InventoryViewModel
     
     init(label: String, category: ItemCategory) {
         viewModel = InventoryViewModel(label: label, category: category)
@@ -34,24 +34,5 @@ struct InventoryView: View {
 struct InventoryView_Previews: PreviewProvider {
     static var previews: some View {
         InventoryView(label: "Label", category: .weapon)
-    }
-}
-
-
-class InventoryViewModel: ObservableObject {
-   
-    @Published var label: String = ""
-    @Published var category: ItemCategory
-    @Published var items: [Item] = []
-    private let realmService = RealmService.shared
-    
-    init(label: String, category: ItemCategory) {
-        self.label = label
-        self.category = category
-    }
-    
-    func getItems() {
-        items = realmService.getItems(withCategory: category)
-        print(items)
     }
 }
