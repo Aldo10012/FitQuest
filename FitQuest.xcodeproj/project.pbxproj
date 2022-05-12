@@ -44,6 +44,7 @@
 		63D66E98282C4CB300237104 /* ItemGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E97282C4CB300237104 /* ItemGalleryView.swift */; };
 		63D66E9A282C4E3100237104 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E99282C4E3100237104 /* ProfileView.swift */; };
 		63D66E9C282C50D500237104 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E9B282C50D500237104 /* MarketViewModel.swift */; };
+		63D66E9E282CEB6F00237104 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E9D282CEB6F00237104 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		63D66E97282C4CB300237104 /* ItemGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemGalleryView.swift; sourceTree = "<group>"; };
 		63D66E99282C4E3100237104 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		63D66E9B282C50D500237104 /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
+		63D66E9D282CEB6F00237104 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */,
 				63477DF428275262006E413F /* GoalCompletinoManager.swift */,
 				63477DF6282755E3006E413F /* LevelingManager.swift */,
+				63D66E9D282CEB6F00237104 /* Images.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				63477DF528275262006E413F /* GoalCompletinoManager.swift in Sources */,
 				636B745B2822478000CFBA9A /* Item.swift in Sources */,
 				63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */,
+				63D66E9E282CEB6F00237104 /* Images.swift in Sources */,
 				63075BD42820D95E003EB40D /* Date-ext.swift in Sources */,
 				63075BCF2820CBF6003EB40D /* HomeViewModel.swift in Sources */,
 				63075BB12820C782003EB40D /* FitQuestApp.swift in Sources */,

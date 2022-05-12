@@ -13,13 +13,27 @@ class Item: Object {
     @Persisted var price: Int = 0
     @Persisted var levelRequired: Int = 0
     @Persisted var desc: String
+    @Persisted private var imgString: String
+    var image: Images {
+        get{
+            guard let image = Images(rawValue: imgString) else {
+                assertionFailure("Invalid difficultyValue of \(imgString)")
+                return .empty
+            }
+            return image
+        }
+        set{
+            imgString = newValue.rawValue
+        }
+    }
     
-    convenience init(name: String, price: Int, levelRequired: Int, description: String) {
+    convenience init(name: String, price: Int, levelRequired: Int, description: String, image: Images = .empty) {
         self.init()
         
         self.name = name
         self.price = price
         self.levelRequired = levelRequired
         self.desc = description
+        self.image = image
     }
 }
