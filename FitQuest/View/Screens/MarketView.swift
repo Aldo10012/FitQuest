@@ -47,47 +47,19 @@ struct MarketView: View {
             }
             
             if viewModel.cartCardIsShown {
-                VStack(spacing: 20) {
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(width: 60, height: 60)
-                    
-                    Text("\(viewModel.selectedItem!.name)")
-                        .font(.title3)
-                    
-                    Text("\(viewModel.selectedItem!.desc)")
-                    
-                    HStack() {
-                        Button {
-                            viewModel.cartCardIsShown = false
-                            viewModel.selectedItem = nil
-                        } label: {
-                            Text("Cancel")
-                        }
-                        .padding(10)
-                        .background(Color.cardBGColor)
-                        .tint(.black)
-                        
-                        Spacer()
-                        
-                        Button {
-                            viewModel.buyItem()
-                            viewModel.cartCardIsShown = false
-                            viewModel.selectedItem = nil
-                        } label: {
-                            Text("Buy 🪙 \(viewModel.selectedItem!.price)")
-                        }
-                        .padding(10)
-                        .background(Color.cardBGColor)
-                        .cornerRadius(10)
-                        .tint(.black)
-                    }
-                    .padding(.top, 30)
-
-                }
-                .frame(width: UIScreen.main.bounds.size.width-120)
-                .padding(30)
-                .background(Color.green)
+                BuyItemCard(
+                    name: viewModel.selectedItem!.name,
+                    description: viewModel.selectedItem!.desc,
+                    price: viewModel.selectedItem!.price,
+                    onBuy: {
+                        viewModel.buyItem()
+                        viewModel.cartCardIsShown = false
+                        viewModel.selectedItem = nil
+                    },
+                    onCancel: {
+                        viewModel.cartCardIsShown = false
+                        viewModel.selectedItem = nil
+                    })
             }
             
         }

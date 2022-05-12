@@ -46,6 +46,7 @@
 		63D66E9C282C50D500237104 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E9B282C50D500237104 /* MarketViewModel.swift */; };
 		63D66E9E282CEB6F00237104 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E9D282CEB6F00237104 /* Images.swift */; };
 		63D66EA0282CF19300237104 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66E9F282CF19300237104 /* RealmError.swift */; };
+		63D66EA2282D029100237104 /* BuyItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D66EA1282D029100237104 /* BuyItemCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		63D66E9B282C50D500237104 /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
 		63D66E9D282CEB6F00237104 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		63D66E9F282CF19300237104 /* RealmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
+		63D66EA1282D029100237104 /* BuyItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyItemCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				636B745D2822574300CFBA9A /* UserStatsBarView.swift */,
 				63D66E97282C4CB300237104 /* ItemGalleryView.swift */,
 				637D77E528238F1400944D79 /* GoalCellView.swift */,
+				63D66EA1282D029100237104 /* BuyItemCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				63BC2F4A282A03C2001DCFD8 /* RootView.swift in Sources */,
 				637D77E628238F1400944D79 /* GoalCellView.swift in Sources */,
 				63D66E9C282C50D500237104 /* MarketViewModel.swift in Sources */,
+				63D66EA2282D029100237104 /* BuyItemCard.swift in Sources */,
 				63075BB32820C782003EB40D /* HomeView.swift in Sources */,
 				63477DF928275BE6006E413F /* String-ext.swift in Sources */,
 				63477DF7282755E3006E413F /* LevelingManager.swift in Sources */,
