@@ -47,19 +47,29 @@ struct MarketView: View {
             }
             
             if viewModel.cartCardIsShown {
-                BuyItemCard(
-                    name: viewModel.selectedItem!.name,
-                    description: viewModel.selectedItem!.desc,
-                    price: viewModel.selectedItem!.price,
-                    onBuy: {
-                        viewModel.buyItem()
-                        viewModel.cartCardIsShown = false
-                        viewModel.selectedItem = nil
-                    },
-                    onCancel: {
-                        viewModel.cartCardIsShown = false
-                        viewModel.selectedItem = nil
+                ZStack {
+                    Rectangle()
+                        .edgesIgnoringSafeArea(.all)
+                        .foregroundColor(.opaqueBackground)
+                        .onTapGesture {
+                            viewModel.cartCardIsShown = false
+                            viewModel.selectedItem = nil
+                        }
+                    
+                    BuyItemCard(
+                        name: viewModel.selectedItem!.name,
+                        description: viewModel.selectedItem!.desc,
+                        price: viewModel.selectedItem!.price,
+                        onBuy: {
+                            viewModel.buyItem()
+                            viewModel.cartCardIsShown = false
+                            viewModel.selectedItem = nil
+                        },
+                        onCancel: {
+                            viewModel.cartCardIsShown = false
+                            viewModel.selectedItem = nil
                     })
+                }
             }
             
         }

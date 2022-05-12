@@ -34,6 +34,7 @@ struct BuyItemCard: View {
                 }
                 .padding(10)
                 .background(Color.cardBGColor)
+                .cornerRadius(10)
                 .tint(.black)
                 
                 Spacer()
@@ -53,7 +54,8 @@ struct BuyItemCard: View {
         }
         .frame(width: UIScreen.main.bounds.size.width-120)
         .padding(30)
-        .background(Color.green)
+        .background(Color.white)
+        .cornerRadius(20)
     }
 }
 
