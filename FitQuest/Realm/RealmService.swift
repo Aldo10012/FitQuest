@@ -199,5 +199,15 @@ class RealmService {
             completion(Result.success(true))
         }
     }
+    
+    func getItems(withCategory category: ItemCategory) -> [Item] {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return []
+        }
+        
+        let items = currentUser.items.filter{ $0.itemCategory == category }
+        return Array(items)
+    }
 
 }

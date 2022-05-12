@@ -38,6 +38,7 @@
 		6387EB1A2822DBCE0032484E /* NewGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB192822DBCE0032484E /* NewGoalViewModel.swift */; };
 		6387EB1C2822EAA40032484E /* GoalCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1B2822EAA40032484E /* GoalCreater.swift */; };
 		6387EB1E2822EB3B0032484E /* Color-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387EB1D2822EB3B0032484E /* Color-ext.swift */; };
+		63B011EC282D95A00057859E /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B011EB282D95A00057859E /* InventoryView.swift */; };
 		63BC2F4A282A03C2001DCFD8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F49282A03C2001DCFD8 /* RootView.swift */; };
 		63BC2F4C282A0409001DCFD8 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC2F4B282A0409001DCFD8 /* MarketView.swift */; };
 		63CE4A012825D5C200599FCE /* GoalCompletionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */; };
@@ -81,6 +82,7 @@
 		6387EB192822DBCE0032484E /* NewGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewModel.swift; sourceTree = "<group>"; };
 		6387EB1B2822EAA40032484E /* GoalCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreater.swift; sourceTree = "<group>"; };
 		6387EB1D2822EB3B0032484E /* Color-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-ext.swift"; sourceTree = "<group>"; };
+		63B011EB282D95A00057859E /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		63BC2F49282A03C2001DCFD8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		63BC2F4B282A0409001DCFD8 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
 		63CE4A002825D5C200599FCE /* GoalCompletionValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCompletionValidator.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				636B745F28226D6500CFBA9A /* NewGoalView.swift */,
 				63BC2F4B282A0409001DCFD8 /* MarketView.swift */,
 				63D66E99282C4E3100237104 /* ProfileView.swift */,
+				63B011EB282D95A00057859E /* InventoryView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				63D66E98282C4CB300237104 /* ItemGalleryView.swift in Sources */,
 				636B74572822443600CFBA9A /* HealthTypeAdapter.swift in Sources */,
 				637D77EA282398CB00944D79 /* NSNotification-ext.swift in Sources */,
+				63B011EC282D95A00057859E /* InventoryView.swift in Sources */,
 				63BC2F4C282A0409001DCFD8 /* MarketView.swift in Sources */,
 				63075BCD2820CBE0003EB40D /* User.swift in Sources */,
 				63075BCB2820CBB5003EB40D /* HealthKitService.swift in Sources */,

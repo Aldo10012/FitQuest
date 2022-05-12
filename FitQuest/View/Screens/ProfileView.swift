@@ -12,9 +12,22 @@ struct ProfileView: View {
         NavigationView {
             Form {
                 Section {
-                    Text("Weapons")
-                    Text("Armor")
-                    Text("Special Items")
+                    NavigationLink(destination:
+                        InventoryView(label: "Weapons", category: .weapon))
+                    {
+                        Text("Weapons")
+                    }
+                    NavigationLink(destination:
+                        InventoryView(label: "Armor", category: .armor))
+                    {
+                        Text("Armor")
+                    }
+                    NavigationLink(destination:
+                        InventoryView(label: "Special Items", category: .specialItem))
+                    {
+                        Text("Special Items")
+                    }
+                    
                 } header: {
                     Text("Inventory")
                 }
