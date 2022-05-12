@@ -193,6 +193,12 @@ class RealmService {
             return
         }
         
+        if currentUser.level < item.levelRequired {
+            print("You aren't at a high enough level")
+            completion(Result.failure(.needAHigherLevel))
+            return
+        }
+        
         try! realm?.write {
             currentUser.coins -= item.price
             currentUser.items.append(item)

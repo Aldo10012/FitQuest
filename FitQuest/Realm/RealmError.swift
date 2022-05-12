@@ -10,4 +10,5 @@ import Foundation
 enum RealmError: String, Error {
     case noCurrentUser = "No Current User"
     case notEnoughCoins = "Not Enough Coins to buy this item"
+    case needAHigherLevel = "You need a higher level"
 }
