@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct StoreView: View {
+struct MarketView: View {
     
-    let viewModel = StoreViewModel()
+    let viewModel = MarketViewModel()
     
     var body: some View {
-        NavigationView {
             VStack {
                 HStack() {
                     Text("Level \(viewModel.level)")
@@ -40,12 +39,11 @@ struct StoreView: View {
                 Spacer()
             }
             .navigationBarTitle(Text("Shop"), displayMode: .inline)
-        }
     }
 }
 
-struct StoreView_Previews: PreviewProvider {
+struct MarketView_Previews: PreviewProvider {
     static var previews: some View {
-        StoreView()
+        MarketView()
     }
 }

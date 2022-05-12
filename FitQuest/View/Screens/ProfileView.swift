@@ -9,7 +9,26 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Section {
+                    Text("Weapons")
+                    Text("Armor")
+                    Text("Special Items")
+                } header: {
+                    Text("Inventory")
+                }
+                
+                Section {
+                    NavigationLink(destination: MarketView()) {
+                        Text("Market")
+                    }
+                } header: {
+                    Text("Shops")
+                }
+            }
+            .navigationBarTitle(Text("Profile"), displayMode: .inline)
+        }
     }
 }
 

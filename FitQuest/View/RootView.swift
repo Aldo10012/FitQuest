@@ -15,7 +15,7 @@ struct RootView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            StoreView()
+            ProfileView()
                 .tabItem {
                     Label("Store", systemImage: "dollarsign.circle")
                 }

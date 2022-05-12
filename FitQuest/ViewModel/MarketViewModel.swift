@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class StoreViewModel: ObservableObject {
+class MarketViewModel: ObservableObject {
     
     // MARK: - Properties
     
