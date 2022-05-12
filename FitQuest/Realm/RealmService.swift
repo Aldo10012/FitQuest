@@ -178,5 +178,25 @@ class RealmService {
             currentUser.expNeededToLevelUp = lm.getExpNeededToLevelUp(currentLevel: currentUser.level)
         })
     }
+    
+    // MARK: - Items
+    
+    func buyItem(item: Item, completion: @escaping (Result<Bool, RealmError>) -> ()) {
+        guard let currentUser = self.getCurrentUser() else {
+            print("No current user")
+            return
+        }
+        
+        if currentUser.coins < item.price {
+            print("You don't have enough coins")
+            completion(Result.failure(.notEnoughCoins))
+        }
+        
+        try! realm?.write {
+            currentUser.coins -= item.price
+            currentUser.items.append(item)
+            completion(Result.success(true))
+        }
+    }
 
 }
