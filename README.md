@@ -31,4 +31,17 @@ Primarily for myself, but for anyone who is willing to be held accountable for t
 - XCode 13, Swift 5, iOS 15
 
 ## Usage
+When you first log in, you will be prompted to allow access to your Health data.
+
+WHen you first open the app, you will have no goals set up. You can add a goal by clicking "Add" on the top right. Select a type of exercise and a difficulty, then tap "Create" to add teh goal. You can also delete or edit an existing goal if you so choose.
+
+<img src="Images/home-empty.png" width=18%> <img src="Images/create-goal.png" width=18%> <img src="Images/home-one-goal.png" width=18%> <img src="Images/home-delete-goal.png" width=18%> <img src="Images/home-edit-goal.png" width=18%> 
+
+Upon completion of a goal, user will gail experience and be rewarded with coins. Coins can be used to buy items from the shop.
+
+<img src="Images/profile.png" width=18%> <img src="Images/Shop.png" width=18%> <img src="Images/buy-item.png" width=18%> 
+
+
+
+
 
