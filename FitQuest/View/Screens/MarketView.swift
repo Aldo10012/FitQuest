@@ -60,6 +60,7 @@ struct MarketView: View {
                         name: viewModel.selectedItem!.name,
                         description: viewModel.selectedItem!.desc,
                         price: viewModel.selectedItem!.price,
+                        levelNeeded: viewModel.selectedItem!.levelRequired,
                         onBuy: {
                             viewModel.buyItem()
                             viewModel.cartCardIsShown = false
